@@ -1,9 +1,9 @@
 # Custom Speaker
 
-**Динамик со своими звуками для 7 Days to Die 2.0**
+**Динамик со своими звуками для 7 Days to Die 3.1**
 
 ![version](https://img.shields.io/badge/version-0.4.0-blue)
-![game](https://img.shields.io/badge/7%20Days%20to%20Die-2.0-orange)
+![game](https://img.shields.io/badge/7%20Days%20to%20Die-3.1-orange)
 ![type](https://img.shields.io/badge/type-server%20%2B%20client-lightgrey)
 ![eac](https://img.shields.io/badge/EAC-must%20be%20off-red)
 
