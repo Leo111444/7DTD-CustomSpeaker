@@ -1,0 +1,15 @@
+* text=auto
+
+*.cs      text diff=csharp
+*.xml     text
+*.csv     text
+*.json    text
+*.md      text
+*.txt     text
+*.csproj  text
+
+*.ogg     binary
+*.wav     binary
+*.mp3     binary
+*.unity3d binary
+*.dll     binary
