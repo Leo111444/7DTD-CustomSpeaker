@@ -1,3 +1,73 @@
+[b][size=150]Custom Speaker — a speaker block with your own sounds[/size][/b]
+
+An electric block that plays [b]your own audio files[/b]. Everyone nearby hears it — the sound is synced over the network by the game's own broadcast mechanism.
+
+[b]No Unity Editor and no AssetBundle needed[/b]: drop an .ogg into the mod folder and it plays.
+
+[hr]
+
+[b][size=125]Features[/size][/b]
+[list]
+[*]Your own tracks in .ogg, .wav, .mp3 — just files in a folder
+[*]Up to 64 tracks, picked from a list window
+[*]Audible radius: 30 / 50 / 70 meters
+[*]Manual on/off switch right in the block's radial menu
+[*]Multiplayer ready: dedicated servers and co-op
+[*]Settings are stored inside the block itself — saved in the world and visible to every player
+[/list]
+
+[b][size=125]Installation[/size][/b]
+[list=1]
+[*]Copy the [i]CustomSpeaker[/i] folder into [i]<game folder>\Mods\[/i]
+[*]Put your audio files into [i]CustomSpeaker\Sounds\[/i]
+[*]Launch the game with EAC disabled (the mod ships a dll)
+[/list]
+
+[b]Important:[/b] the mod is required on the server and on every client, and the [i]Sounds[/i] folder must be identical for all players — the network carries the track number, not the file name.
+
+[b][size=125]How to use[/size][/b]
+The block is crafted at a workbench (4 forged iron + 3 electrical parts) or taken from creative, Science group. It needs power like any electric block.
+
+Press [b]E[/b] to open the radial menu:
+[list]
+[*][b]Turn on / off[/b] — manual switch
+[*][b]Settings[/b] — window with the track list and radius
+[*][b]Take[/b] — pick the block up
+[/list]
+
+Looking at the speaker shows the current track, radius and state.
+
+[b][size=125]Settings (config.json)[/size][/b]
+[code]
+Loop          — loop the track while powered
+Volume        — volume 0..0.5
+DefaultRadius — fallback radius
+[/code]
+
+[b][size=125]Troubleshooting[/size][/b]
+In the game console (F1):
+[code]
+cspeaker          — list of found tracks and what got loaded
+cspeaker rescan   — re-read the Sounds folder without restarting
+[/code]
+
+[b][size=125]Requirements[/size][/b]
+[list]
+[*]7 Days to Die 3.1
+[*]EAC disabled
+[/list]
+
+[b][size=125]Limitations[/size][/b]
+[list]
+[*]64 files max: the track number lives inside the block, and the game gives a block only 8 bits of data
+[*]Volume is capped at 50% so the speaker never drowns out the game
+[/list]
+
+[b]Author:[/b] SkyLett
+
+[hr]
+[hr]
+
 [b][size=150]Custom Speaker — динамик со своими звуками[/size][/b]
 
 Электрический блок, который проигрывает [b]ваши собственные аудиофайлы[/b]. Звук слышат все игроки рядом — синхронизация идёт штатным механизмом игры, отдельных костылей нет.
@@ -61,7 +131,6 @@ cspeaker rescan   — перечитать папку Sounds без переза
 [list]
 [*]Максимум 64 файла: номер трека хранится внутри блока, а игра выделяет под данные блока всего 8 бит
 [*]Громкость ограничена 50% — чтобы динамик не перекрикивал игру
-[*]Нужен отключённый EAC
 [/list]
 
 [b]Автор:[/b] SkyLett
