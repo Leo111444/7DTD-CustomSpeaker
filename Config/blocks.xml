@@ -1,0 +1,44 @@
+<configs>
+
+	<append xpath="/blocks">
+
+		<!-- Динамик со своими треками. Class="Speaker" даёт готовую MP-трансляцию:
+		     при подаче питания/сигнала игра сама зовёт Audio.Manager.BroadcastPlay. -->
+		<block name="customSpeaker">
+			<property name="CreativeMode" value="Player" />
+			<property name="Class" value="CustomSpeaker.CSpeaker, CustomSpeaker" />
+			<property name="CustomIcon" value="speaker" />
+			<property name="CustomIconTint" value="FFD070" />
+			<property name="DescriptionKey" value="customSpeakerDesc" />
+			<property name="RequiredPower" value="5" />
+			<property name="DisplayType" value="blockElectrical" />
+			<property name="Material" value="Mmetal_weak" />
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="@:Entities/Electrical/speakerLoudWallPrefab.prefab" />
+			<property name="ImposterDontBlock" value="true" />
+			<property name="WaterFlow" value="permitted" />
+			<property name="HandleFace" value="South" />
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket" />
+			<property name="EconomicValue" value="72" />
+			<property name="SoundPickup" value="speaker_grab" />
+			<property name="SoundPlace" value="speaker_place" />
+			<property name="TakeDelay" value="5" />
+			<property class="RepairItems">
+				<property name="resourceForgedIron" value="3" />
+				<property name="resourceElectricParts" value="2" />
+			</property>
+			<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble" />
+			<drop event="Harvest" name="resourceElectricParts" count="1,2" tag="salvageHarvest" />
+			<drop event="Harvest" name="resourceScrapIron" count="5,10" tag="allHarvest,perkJunkMiner" />
+			<drop event="Destroy" count="0" />
+			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1" />
+			<property name="SortOrder1" value="B155" />
+			<property name="SortOrder2" value="0016" />
+			<property name="Group" value="Science,TCScience" />
+			<property name="Tags" value="electricianSkill,scrap100" />
+			<property name="FilterTags" value="MC_playerBlocks,SC_electrical" />
+		</block>
+
+	</append>
+
+</configs>

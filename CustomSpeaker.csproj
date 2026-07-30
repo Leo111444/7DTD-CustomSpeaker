@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>CustomSpeaker</AssemblyName>
+    <RootNamespace>CustomSpeaker</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GameManaged Condition="'$(GameManaged)' == ''">C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die\7DaysToDie_Data\Managed</GameManaged>
+    <HarmonyDir Condition="'$(HarmonyDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die\Mods\0_TFP_Harmony</HarmonyDir>
+    <DeployDir Condition="'$(DeployDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die\Mods\CustomSpeaker</DeployDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src\**\*.cs" />
+  </ItemGroup>
+
+  <!-- Все сборки из Managed игры, чтобы резолвились непрямые зависимости. -->
+  <ItemGroup>
+    <Reference Include="$(GameManaged)\*.dll">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(HarmonyDir)\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Деплой: dll + ModInfo + Config + звуки. -->
+  <Target Name="DeployMod" AfterTargets="Build">
+    <ItemGroup>
+      <ConfigFiles Include="$(MSBuildProjectDirectory)\Config\**\*.*" />
+      <SoundFiles Include="$(MSBuildProjectDirectory)\Sounds\**\*.*" />
+    </ItemGroup>
+    <MakeDir Directories="$(DeployDir)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(DeployDir)" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\ModInfo.xml" DestinationFolder="$(DeployDir)" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\README.txt" DestinationFolder="$(DeployDir)" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\config.json" DestinationFolder="$(DeployDir)"
+          OverwriteReadOnlyFiles="true" Condition="!Exists('$(DeployDir)\config.json')" />
+    <Copy SourceFiles="@(ConfigFiles)" DestinationFolder="$(DeployDir)\Config\%(RecursiveDir)" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="@(SoundFiles)" DestinationFolder="$(DeployDir)\Sounds\%(RecursiveDir)" OverwriteReadOnlyFiles="true" />
+    <Message Importance="high" Text="[CustomSpeaker] Задеплоено в $(DeployDir)" />
+  </Target>
+
+</Project>

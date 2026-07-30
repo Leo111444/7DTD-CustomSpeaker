@@ -1,0 +1,18 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,russian
+customSpeaker,blocks,Electricity,,,Custom Speaker,Кастомный динамик
+customSpeakerDesc,blocks,Electricity,,,"Plays audio files from the mod's Sounds folder. Needs power; everyone nearby hears it.","Проигрывает аудиофайлы из папки Sounds мода. Требует питание; слышен всем игрокам рядом."
+blockcommand_cspeakerToggle,blocks,Electricity,,,Turn on / off,Включить / выключить
+blockcommand_cspeakerMenu,blocks,Electricity,,,Settings,Настройки
+cspeakerActivationText,blocks,Electricity,,,"Track: {0}  |  Radius: {1} m  |  {2}","Трек: {0}  |  Радиус: {1} м  |  {2}"
+cspeakerStatePlaying,blocks,Electricity,,,playing,играет
+cspeakerStateOff,blocks,Electricity,,,switched off,выключен
+cspeakerStateNoPower,blocks,Electricity,,,no power,нет питания
+cspeakerWindowTitle,blocks,Electricity,,,Speaker settings,Настройки динамика
+cspeakerWindowTracks,blocks,Electricity,,,Tracks,Треки
+cspeakerWindowClose,blocks,Electricity,,,Close,Закрыть
+cspeakerWindowRadius,blocks,Electricity,,,Audible radius: {0} m,Радиус слышимости: {0} м
+cspeakerWindowRadiusMuted,blocks,Electricity,,,Audible radius: —,Радиус слышимости: —
+cspeakerWindowPage,blocks,Electricity,,,Page {0} / {1},Страница {0} / {1}
+cspeakerWindowTurnOn,blocks,Electricity,,,"Switched off — click to turn on","Выключен — нажми, чтобы включить"
+cspeakerWindowTurnOffPlaying,blocks,Electricity,,,"Playing — click to turn off","Играет — нажми, чтобы выключить"
+cspeakerWindowTurnOffNoPower,blocks,Electricity,,,"On (no power) — click to turn off","Включён (нет питания) — нажми, чтобы выключить"

@@ -1,0 +1,112 @@
+<configs>
+
+	<append xpath="/windows">
+
+		<window name="customSpeakerWindow" anchor="CenterCenter" pos="-310,400" width="620" height="800" cursor_area="true"
+		        controller="CustomSpeaker.SpeakerWindow, CustomSpeaker">
+
+			<rect name="header" pos="0,0" height="43" depth="1">
+				<headerbg />
+				<label style="header.name" pos="6,-6" text_key="cspeakerWindowTitle" />
+			</rect>
+
+			<rect name="content" pos="0,-46" width="620" height="754" depth="1">
+				<sprite depth="6" name="border" sprite="menu_empty3px" pos="0,0" width="620" height="754" color="[black]" type="sliced" fillcenter="false" globalopacitymod="0.9" />
+				<sprite depth="1" name="backgroundMain" sprite="menu_empty3px" pos="2,-2" width="616" height="750" color="[darkGrey]" type="sliced" fillcenter="true" globalopacitymod="0.65" />
+
+				<!-- питание / ручной выключатель -->
+				<rect name="powerToggle" pos="10,-10" width="600" height="44" style="press, hover">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="42" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" sound="[recipe_click]" />
+					<label depth="4" name="powerLabel" pos="16,-21" width="570" height="40" text="{powerText}" font_size="26" justify="left" pivot="left" />
+				</rect>
+
+				<!-- радиус -->
+				<rect name="radiusRow" pos="10,-60" width="600" height="44">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="42" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" />
+					<label depth="4" name="radiusLabel" pos="16,-21" width="380" height="40" text="{radiusText}" font_size="26" justify="left" pivot="left" />
+					<rect name="radiusMinus" pos="420,-2" width="80" height="38" style="press, hover">
+						<sprite depth="4" name="bg" sprite="menu_empty3px" pos="0,0" width="80" height="38" color="[darkGrey]" type="sliced" fillcenter="true" globalopacitymod="0.9" sound="[paging_click]" />
+						<label depth="5" name="lbl" pos="40,-19" width="80" height="38" text="-" font_size="30" justify="center" pivot="center" />
+					</rect>
+					<rect name="radiusPlus" pos="510,-2" width="80" height="38" style="press, hover">
+						<sprite depth="4" name="bg" sprite="menu_empty3px" pos="0,0" width="80" height="38" color="[darkGrey]" type="sliced" fillcenter="true" globalopacitymod="0.9" sound="[paging_click]" />
+						<label depth="5" name="lbl" pos="40,-19" width="80" height="38" text="+" font_size="30" justify="center" pivot="center" />
+					</rect>
+				</rect>
+
+				<label depth="4" name="listHeader" pos="16,-118" width="300" height="36" text_key="cspeakerWindowTracks" font_size="26" justify="left" pivot="left" />
+				<label depth="4" name="pageLabel" pos="604,-118" width="300" height="36" text="{pageText}" font_size="26" justify="right" pivot="right" />
+
+				<!-- список треков -->
+				<rect name="track0" pos="10,-146" width="600" height="46" style="press, hover" visible="{track0visible}">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="44" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" sound="[recipe_click]" />
+					<sprite depth="5" name="check" width="30" height="30" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{track0selected}" />
+					<label depth="4" name="lbl" pos="56,-22" width="530" height="42" text="{track0name}" font_size="26" justify="left" pivot="left" />
+				</rect>
+				<rect name="track1" pos="10,-194" width="600" height="46" style="press, hover" visible="{track1visible}">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="44" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" sound="[recipe_click]" />
+					<sprite depth="5" name="check" width="30" height="30" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{track1selected}" />
+					<label depth="4" name="lbl" pos="56,-22" width="530" height="42" text="{track1name}" font_size="26" justify="left" pivot="left" />
+				</rect>
+				<rect name="track2" pos="10,-242" width="600" height="46" style="press, hover" visible="{track2visible}">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="44" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" sound="[recipe_click]" />
+					<sprite depth="5" name="check" width="30" height="30" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{track2selected}" />
+					<label depth="4" name="lbl" pos="56,-22" width="530" height="42" text="{track2name}" font_size="26" justify="left" pivot="left" />
+				</rect>
+				<rect name="track3" pos="10,-290" width="600" height="46" style="press, hover" visible="{track3visible}">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="44" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" sound="[recipe_click]" />
+					<sprite depth="5" name="check" width="30" height="30" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{track3selected}" />
+					<label depth="4" name="lbl" pos="56,-22" width="530" height="42" text="{track3name}" font_size="26" justify="left" pivot="left" />
+				</rect>
+				<rect name="track4" pos="10,-338" width="600" height="46" style="press, hover" visible="{track4visible}">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="44" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" sound="[recipe_click]" />
+					<sprite depth="5" name="check" width="30" height="30" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{track4selected}" />
+					<label depth="4" name="lbl" pos="56,-22" width="530" height="42" text="{track4name}" font_size="26" justify="left" pivot="left" />
+				</rect>
+				<rect name="track5" pos="10,-386" width="600" height="46" style="press, hover" visible="{track5visible}">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="44" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" sound="[recipe_click]" />
+					<sprite depth="5" name="check" width="30" height="30" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{track5selected}" />
+					<label depth="4" name="lbl" pos="56,-22" width="530" height="42" text="{track5name}" font_size="26" justify="left" pivot="left" />
+				</rect>
+				<rect name="track6" pos="10,-434" width="600" height="46" style="press, hover" visible="{track6visible}">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="44" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" sound="[recipe_click]" />
+					<sprite depth="5" name="check" width="30" height="30" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{track6selected}" />
+					<label depth="4" name="lbl" pos="56,-22" width="530" height="42" text="{track6name}" font_size="26" justify="left" pivot="left" />
+				</rect>
+				<rect name="track7" pos="10,-482" width="600" height="46" style="press, hover" visible="{track7visible}">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="44" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" sound="[recipe_click]" />
+					<sprite depth="5" name="check" width="30" height="30" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{track7selected}" />
+					<label depth="4" name="lbl" pos="56,-22" width="530" height="42" text="{track7name}" font_size="26" justify="left" pivot="left" />
+				</rect>
+				<rect name="track8" pos="10,-530" width="600" height="46" style="press, hover" visible="{track8visible}">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="44" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" sound="[recipe_click]" />
+					<sprite depth="5" name="check" width="30" height="30" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{track8selected}" />
+					<label depth="4" name="lbl" pos="56,-22" width="530" height="42" text="{track8name}" font_size="26" justify="left" pivot="left" />
+				</rect>
+				<rect name="track9" pos="10,-578" width="600" height="46" style="press, hover" visible="{track9visible}">
+					<sprite depth="2" name="bg" sprite="menu_empty3px" pos="0,0" width="600" height="44" color="[black]" type="sliced" fillcenter="true" globalopacitymod="0.7" sound="[recipe_click]" />
+					<sprite depth="5" name="check" width="30" height="30" pos="10,-7" color="[iconColor]" sprite="ui_game_symbol_check" visible="{track9selected}" />
+					<label depth="4" name="lbl" pos="56,-22" width="530" height="42" text="{track9name}" font_size="26" justify="left" pivot="left" />
+				</rect>
+
+				<!-- страницы -->
+				<rect name="pagePrev" pos="10,-636" width="120" height="44" style="press, hover" visible="{pagingVisible}">
+					<sprite depth="4" name="bg" sprite="menu_empty3px" pos="0,0" width="120" height="42" color="[darkGrey]" type="sliced" fillcenter="true" globalopacitymod="0.9" sound="[paging_click]" />
+					<label depth="5" name="lbl" pos="60,-21" width="120" height="42" text="&lt;" font_size="28" justify="center" pivot="center" />
+				</rect>
+				<rect name="pageNext" pos="140,-636" width="120" height="44" style="press, hover" visible="{pagingVisible}">
+					<sprite depth="4" name="bg" sprite="menu_empty3px" pos="0,0" width="120" height="42" color="[darkGrey]" type="sliced" fillcenter="true" globalopacitymod="0.9" sound="[paging_click]" />
+					<label depth="5" name="lbl" pos="60,-21" width="120" height="42" text="&gt;" font_size="28" justify="center" pivot="center" />
+				</rect>
+
+				<rect name="closeButton" pos="400,-636" width="210" height="44" style="press, hover">
+					<sprite depth="4" name="bg" sprite="menu_empty3px" pos="0,0" width="210" height="42" color="[darkGrey]" type="sliced" fillcenter="true" globalopacitymod="0.9" sound="[paging_click]" />
+					<label depth="5" name="lbl" pos="105,-21" width="210" height="42" text_key="cspeakerWindowClose" font_size="26" justify="center" pivot="center" />
+				</rect>
+			</rect>
+
+		</window>
+
+	</append>
+
+</configs>

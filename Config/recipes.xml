@@ -1,0 +1,10 @@
+<configs>
+
+	<append xpath="/recipes">
+		<recipe name="customSpeaker" count="1" craft_area="workbench">
+			<ingredient name="resourceForgedIron" count="4" />
+			<ingredient name="resourceElectricParts" count="3" />
+		</recipe>
+	</append>
+
+</configs>

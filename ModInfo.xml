@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="CustomSpeaker" />
+	<DisplayName value="Custom Speaker" />
+	<Description value="Динамик, проигрывающий свои аудиофайлы из папки мода. Слышен всем игрокам рядом (ванильная трансляция звука)." />
+	<Author value="SkyLett" />
+	<Version value="0.4.0" />
+	<Website value="" />
+</xml>

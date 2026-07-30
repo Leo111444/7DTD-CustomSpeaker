@@ -1,0 +1,9 @@
+<configs>
+
+	<append xpath="/xui">
+		<window_group name="customSpeakerWindow" defaultselected="content">
+			<window name="customSpeakerWindow" />
+		</window_group>
+	</append>
+
+</configs>
