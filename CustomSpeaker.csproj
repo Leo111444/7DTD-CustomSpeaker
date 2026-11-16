@@ -33,6 +33,8 @@
     <ItemGroup>
       <ConfigFiles Include="$(MSBuildProjectDirectory)\Config\**\*.*" />
       <SoundFiles Include="$(MSBuildProjectDirectory)\Sounds\**\*.*" />
+      <AtlasFiles Include="$(MSBuildProjectDirectory)\UIAtlases\**\*.png" />
+      <ResourceFiles Include="$(MSBuildProjectDirectory)\Resources\**\*.*" />
     </ItemGroup>
     <MakeDir Directories="$(DeployDir)" />
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(DeployDir)" OverwriteReadOnlyFiles="true" />
@@ -42,6 +44,9 @@
           OverwriteReadOnlyFiles="true" Condition="!Exists('$(DeployDir)\config.json')" />
     <Copy SourceFiles="@(ConfigFiles)" DestinationFolder="$(DeployDir)\Config\%(RecursiveDir)" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="@(SoundFiles)" DestinationFolder="$(DeployDir)\Sounds\%(RecursiveDir)" OverwriteReadOnlyFiles="true" />
+    <!-- иконка и модель блока — C:\3D\custom_speaker, 2026-11-13 -->
+    <Copy SourceFiles="@(AtlasFiles)" DestinationFolder="$(DeployDir)\UIAtlases\%(RecursiveDir)" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="@(ResourceFiles)" DestinationFolder="$(DeployDir)\Resources\%(RecursiveDir)" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="true" />
     <Message Importance="high" Text="[CustomSpeaker] Задеплоено в $(DeployDir)" />
   </Target>
 

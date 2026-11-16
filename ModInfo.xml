@@ -4,6 +4,6 @@
 	<DisplayName value="Custom Speaker" />
 	<Description value="Динамик, проигрывающий свои аудиофайлы из папки мода. Слышен всем игрокам рядом (ванильная трансляция звука)." />
 	<Author value="SkyLett" />
-	<Version value="0.4.0" />
+	<Version value="0.4.1" />
 	<Website value="" />
 </xml>

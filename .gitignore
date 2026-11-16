@@ -8,3 +8,4 @@ dist/
 # Аудио пользователя в репозиторий не тащим — только памятка
 Sounds/*
 !Sounds/_readme.txt
+/backups_assets_2026-11-13

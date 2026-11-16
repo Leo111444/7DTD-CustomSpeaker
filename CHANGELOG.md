@@ -19,3 +19,7 @@
 
 ## 0.1.0
 - Первая версия: блок-динамик, треки из папки `Sounds`, звук слышен всем игрокам рядом
+
+## 0.4.1 (2026-11-13)
+- Своя модель и иконка: настенный PA-кабинет Resources/CustomSpeaker.unity3d?customSpeaker (C:\3D\custom_speaker, объём и
+  WireOffset — как у ванильного speakerLoudWallPrefab, ModelOffset не задан), иконка — рендер модели. csproj копирует UIAtlases и Resources.

@@ -3,18 +3,18 @@
 	<append xpath="/blocks">
 
 		<!-- Динамик со своими треками. Class="Speaker" даёт готовую MP-трансляцию:
-		     при подаче питания/сигнала игра сама зовёт Audio.Manager.BroadcastPlay. -->
+		     при подаче питания/сигнала игра сама зовёт Audio.Manager.BroadcastPlay.
+		     Модель — настенный PA-кабинет (C:\3D\custom_speaker, бандл C:\3D\_unity\build.py): объём и WireOffset как у ванильного
+		     speakerLoudWallPrefab, начало — центр блока (ModelOffset не задаём). Иконка — её рендер. -->
 		<block name="customSpeaker">
 			<property name="CreativeMode" value="Player" />
 			<property name="Class" value="CustomSpeaker.CSpeaker, CustomSpeaker" />
-			<property name="CustomIcon" value="speaker" />
-			<property name="CustomIconTint" value="FFD070" />
 			<property name="DescriptionKey" value="customSpeakerDesc" />
 			<property name="RequiredPower" value="5" />
 			<property name="DisplayType" value="blockElectrical" />
 			<property name="Material" value="Mmetal_weak" />
 			<property name="Shape" value="ModelEntity" />
-			<property name="Model" value="@:Entities/Electrical/speakerLoudWallPrefab.prefab" />
+			<property name="Model" value="#@modfolder:Resources/CustomSpeaker.unity3d?customSpeaker" />
 			<property name="ImposterDontBlock" value="true" />
 			<property name="WaterFlow" value="permitted" />
 			<property name="HandleFace" value="South" />
